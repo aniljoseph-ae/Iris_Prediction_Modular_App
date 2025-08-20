@@ -48,11 +48,6 @@ def create_structure(base_path: Path, project_structure: dict):
             print(f"Create directory: {path}")
             create_structure(path, content)
 
-# if __name__ == "__main__":
-#     CURRENT_DIR = Path(__file__).resolve().parent
-#     ROOT_DIR = CURRENT_DIR.parent
-
-import pathlib
 
 def find_root_dir_git(path):
     while path.parent != path:
@@ -62,7 +57,7 @@ def find_root_dir_git(path):
     return path
 
 if __name__ == "__main__":
-    CURRENT_DIR = pathlib.Path(__file__).resolve().parent
+    CURRENT_DIR = Path(__file__).resolve().parent
     ROOT_DIR = find_root_dir_git(CURRENT_DIR)
     print(f"Creating projectstructure in : {ROOT_DIR}")
     create_structure(ROOT_DIR, project_structure)
