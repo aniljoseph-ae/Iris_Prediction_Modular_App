@@ -1,0 +1,16 @@
+# ./config/config.yaml
+
+paths:
+  data_path: data
+  model_path: model
+
+data:
+  test_size: 0.2
+  random_state: 42
+
+model:
+  type: xgboost
+  params:
+    n_estimators: 100
+    learning_rate: 0.01
+    max_depth: 3
